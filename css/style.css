@@ -1,0 +1,341 @@
+:root {
+  --burgundy: #4D0011;
+  --burgundy-2: #6C0820;
+  --ice: #C7D5F5;
+  --text: #0e0e0e;
+  --white: #ffffff;
+  --accent: #ff6b9a;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ==== DARK THEME VARIABLES ==== */
+body.dark-mode {
+  --text: #f8f8f8;
+  --white: #181818;
+  --ice: #2b2b2b;
+  background: radial-gradient(1000px 600px at 10% -10%, #1b1b1b 0%, #181818 60%);
+  color: var(--text);
+}
+
+/* ==== GLOBAL RESET ==== */
+* { box-sizing: border-box; }
+body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1000px 600px at 10% -10%, #f4f7ff 0%, #eaf0ff 40%, #e8edff00 60%),
+              radial-gradient(900px 700px at 110% 20%, #ffe6ef 0%, #ffffff 50%);
+  color: var(--text);
+  margin: 0;
+  padding-top: 72px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+body.dark-mode, 
+body.dark-mode p, 
+body.dark-mode .text-muted, 
+body.dark-mode .section-title {
+  color: #f1f1f1 !important;
+}
+body.dark-mode .bg-light,
+body.dark-mode .page-head {
+  background: #121212 !important; /* глубокий тёмный фон */
+  color: #f1f1f1 !important;
+}
+/* ==== NAVBAR + FOOTER ==== */
+.main-nav {
+  background: linear-gradient(90deg, var(--burgundy), var(--burgundy-2));
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .5px;
+}
+.nav-link.active {
+  font-weight: 600;
+  border-bottom: 2px solid var(--ice);
+}
+.site-footer {
+  background: linear-gradient(90deg, var(--burgundy), var(--burgundy-2));
+  color: #fff;
+  padding: 18px 0;
+  margin-top: 40px;
+}
+
+/* ==== HERO ==== */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  overflow: hidden;
+  background: transparent;
+}
+.hero h1 { color: var(--burgundy); }
+.logo-badge {
+  width: 180px; height: 180px; border-radius: 50%;
+  background: var(--ice); color: var(--burgundy);
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-size: 28px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+}
+.bg-blob {
+  position: absolute; filter: blur(50px); opacity: .45;
+}
+.blob-1 {
+  width: 360px; height: 360px;
+  background: #ff9cc0; top: -60px; left: -60px;
+  border-radius: 55% 45% 60% 40%/60% 40% 60% 40%;
+}
+.blob-2 {
+  width: 420px; height: 420px;
+  background: #8ab4ff; bottom: -80px; right: -80px;
+  border-radius: 50% 50% 40% 60%/60% 40% 60% 40%;
+}
+
+/* ==== COMMON SECTIONS ==== */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+.page-head { padding: 60px 0 10px; }
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.55));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  transition: transform .25s ease;
+}
+.glass-card:hover { transform: translateY(-4px); }
+
+/* ==== BUTTONS ==== */
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: background .3s ease;
+}
+.btn-accent:hover { background: #ff8fb1; }
+.link-more {
+  color: var(--burgundy-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+.link-more:hover { text-decoration: underline; }
+
+/* ==== CHECKLIST ==== */
+.checklist { list-style: none; padding: 0; margin: 12px 0; }
+.checklist li {
+  padding-left: 28px; position: relative; margin: .3rem 0;
+}
+.checklist li:before {
+  content: "✓"; color: var(--burgundy); font-weight: 700;
+  position: absolute; left: 0; top: 0;
+}
+
+/* ==== PORTFOLIO ==== */
+.case-cover {
+  width: 100%; border-radius: 12px; cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.case-cover:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+.mini { padding-left: 18px; color: #555; font-size: .95rem; }
+
+/* ==== FILTER BUTTONS ==== */
+.filter-buttons .btn {
+  border-radius: 999px;
+  transition: all .25s ease;
+}
+.filter-buttons .btn.active,
+.filter-buttons .btn:hover {
+  background: var(--burgundy);
+  color: #fff;
+  border-color: var(--burgundy);
+}
+
+/* ==== LIGHTBOX ==== */
+.lightbox-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.75);
+  display: none; align-items: center; justify-content: center;
+  z-index: 1050;
+}
+.lightbox-overlay img {
+  max-width: 90vw; max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.6);
+}
+
+/* ==== CRUD TABLE (SERVICES PAGE) ==== */
+#clientTable {
+  border-radius: 8px;
+  overflow: hidden;
+}
+#clientTable th {
+  background: var(--burgundy);
+  color: #fff;
+}
+#clientTable tr:hover {
+  background-color: #fff1f6;
+  transition: background .2s ease;
+}
+#clientForm input, #clientForm button {
+  border-radius: 8px;
+}
+#searchClient {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: .4rem .6rem;
+}
+
+/* ==== PASSWORD STRENGTH ==== */
+#passwordStrength {
+  font-weight: 600;
+  transition: color .3s ease;
+}
+
+/* ==== ALERT ==== */
+#formAlert {
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  animation: fadeSlide .6s ease;
+}
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== TEAM ==== */
+.team-card .tag {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f4f6ff;
+  color: #333;
+  font-size: .85rem;
+}
+
+/* ==== REVEAL ANIMATION ==== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.delay-1 { transition-delay: .12s; }
+.delay-2 { transition-delay: .24s; }
+.delay-3 { transition-delay: .36s; }
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .logo-badge {
+    width: 140px; height: 140px; font-size: 22px;
+  }
+  .hero { min-height: 70vh; }
+  #searchClient { width: 100%; margin-top: 10px; }
+}
+
+/* ==== DARK MODE STYLES ==== */
+body.dark-mode .glass-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+body.dark-mode .main-nav,
+body.dark-mode .site-footer {
+  background: linear-gradient(90deg, #22000a, #4a0018);
+}
+body.dark-mode .filter-buttons .btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+body.dark-mode table {
+  background-color: #222;
+  color: #eee;
+}
+body.dark-mode input, 
+body.dark-mode textarea, 
+body.dark-mode select {
+  background-color: #222;
+  color: #fff;
+  border-color: #555;
+}
+/* === Client Database Table Styling === */
+
+.client-db {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Инпуты и кнопка */
+.client-db input, 
+.client-db button {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f1f1;
+}
+.client-db input::placeholder { color: #aaa; }
+
+.client-db button {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.client-db button:hover {
+  background: #ff8fb1;
+  transform: translateY(-2px);
+}
+
+/* Таблица */
+.client-db table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.client-db thead {
+  background: var(--burgundy);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.client-db tbody tr {
+  background: rgba(255, 255, 255, 0.03);
+  color: #eee;
+  transition: 0.3s;
+}
+
+.client-db tbody tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* В тёмной теме */
+body.dark-mode .client-db {
+  background: rgba(255, 255, 255, 0.05);
+}
+body.dark-mode .client-db table {
+  background: rgba(255, 255, 255, 0.04);
+}
+body.dark-mode .client-db thead {
+  background: linear-gradient(90deg, #4D0011, #6C0820);
+}
+body.dark-mode .client-db tbody tr {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f1f1;
+}
+body.dark-mode .client-db tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

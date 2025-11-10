@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Influence — Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar navbar-expand-lg navbar-dark main-nav">
+    <div class="container">
+      <a class="navbar-brand logo" href="index.html">Influence</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="services.html" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="portfolio.html" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="team.html" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="contact.html" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+
+  <!-- GALLERY -->
+ <main class="container py-5">
+  <h2 class="section-title text-center mb-4">Portfolio</h2>
+  <p class="text-center text-muted mb-5">Selected growth stories from our clients — each project tells its own visual story.</p>
+
+  <!-- FILTER BUTTONS -->
+  <div class="text-center mb-5">
+    <button class="btn btn-outline-dark mx-2 filter-btn active" data-filter="all">All</button>
+    <button class="btn btn-outline-dark mx-2 filter-btn" data-filter="reels">Reels</button>
+    <button class="btn btn-outline-dark mx-2 filter-btn" data-filter="photo">Photo</button>
+    <button class="btn btn-outline-dark mx-2 filter-btn" data-filter="promo">Promo</button>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    <!-- Case 1 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item reveal" data-category="reels">
+      <article class="case-card glass-card p-3 h-100 text-center">
+        <img class="case-cover lightbox w-100 rounded" src="https://picsum.photos/seed/zhansaya/600/400" alt="Zhansaya Realtor" loading="lazy"/>
+        <h5 class="mt-3 fw-bold text-uppercase">Mortgage Realtor — Zhansaya</h5>
+        <p class="text-muted mb-2">Year-long strategy + Reels sprints grew her audience by 300% and crossed 2M views in 12 months.</p>
+        <ul class="mini text-start">
+          <li>Content pillars: mortgage myths, case studies, Q&A</li>
+          <li>Avg. retention: 68% • Saves +240%</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item reveal delay-1" data-category="photo">
+      <article class="case-card glass-card p-3 h-100 text-center">
+        <img class="case-cover lightbox w-100 rounded" src="https://picsum.photos/seed/sara/600/400" alt="Stylist Sara" loading="lazy"/>
+        <h5 class="mt-3 fw-bold text-uppercase">Personal Stylist — Sara</h5>
+        <p class="text-muted mb-2">Style breakdown Reels + mini-stories converted views into paid wardrobe sessions nationwide.</p>
+        <ul class="mini text-start">
+          <li>USP: capsule & fit education</li>
+          <li>Leads via Link in bio: +180%</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item reveal delay-2" data-category="promo">
+      <article class="case-card glass-card p-3 h-100 text-center">
+        <img class="case-cover lightbox w-100 rounded" src="https://picsum.photos/seed/miraogai/600/400" alt="Producer Mira Ogai" loading="lazy"/>
+        <h5 class="mt-3 fw-bold text-uppercase">Producer — Mira Ogai</h5>
+        <p class="text-muted mb-2">Studio turned into a recognizable creative hub. Viral Reels chains boosted brand search and briefs.</p>
+        <ul class="mini text-start">
+          <li>Series: “From brief to premiere”</li>
+          <li>Profile visits: +210% • Inquiries: +3.2×</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Case 4 -->
+    <div class="col-lg-4 col-md-6 col-sm-12 gallery-item reveal delay-3" data-category="reels">
+      <article class="case-card glass-card p-3 h-100 text-center">
+        <img class="case-cover lightbox w-100 rounded" src="https://picsum.photos/seed/smm/600/400" alt="Marketing Expert Adina" loading="lazy"/>
+        <h5 class="mt-3 fw-bold text-uppercase">Marketing Expert — Adina</h5>
+        <p class="text-muted mb-2">Creative SMM campaigns focusing on story-based Reels and cross-platform branding.</p>
+        <ul class="mini text-start">
+          <li>Strategy: consistency + authentic storytelling</li>
+          <li>Followers: +145% • Engagement: 2.8×</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox-overlay">
+    <img id="lightbox-img" src="" alt="preview"/>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <p class="m-0">© 2025 Influence Agency</p>
+      <p class="m-0 small">Instagram • LinkedIn • hello@influence.agency</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
